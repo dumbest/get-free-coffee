@@ -7,12 +7,12 @@ function showAnswer() {
   	return style.sheet;
 	})();
 
-  sheet.addRule(".this-is-answer", "color: green !important; font-weight: bold !important; font-size: 30px !important", 0);
+  sheet.addRule(".this-is-answer", "color: #00704A !important; font-weight: bold !important; font-size: 30px !important; border: solid 2px #00704A;", 0);
 
   window.questions.map(function(q, i) {
     q.choices.map(function(c, i){
       if (c.acquire_score == 1) {
-        highlightChoice(c.name);
+        highlightChoice(c);
         console.log(c.name);
       }
     });
@@ -20,7 +20,9 @@ function showAnswer() {
 }
 
 function highlightChoice(choice) {
-  $(`.db-adman-x-font:contains(${choice})`).addClass("this-is-answer");
+  var onclick = `[onclick="selectChoince(event, ${choice.question_id}, ${choice.id})"]`;
+  document.querySelectorAll(onclick)[0].classList.add("this-is-answer");
+  // $(`.db-adman-x-font:contains(${choice})`).addClass("this-is-answer");
 }
 
 showAnswer();

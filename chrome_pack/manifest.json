@@ -1,6 +1,6 @@
 {
   "name": "Get Free Coffee (กาแฟฟรี)",
-  "version": "1.2",
+  "version": "1.3",
   "description": "Reveal answers to coffee related questions. (เฉลยคำถามเกี่ยวกับกาแฟ)",
   "background": {
     "scripts": ["background.js"],
